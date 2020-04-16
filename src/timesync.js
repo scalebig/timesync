@@ -10,7 +10,9 @@ import * as util from './util.js';
 import * as stat from './stat.js';
 import * as request from './request/request';
 import emitter from './emitter.js';
-var Promise = require('./Promise');
+
+// not polyfilling for Promise
+// var Promise = require('./Promise');
 
 /**
  * Factory function to create a timesync instance
@@ -116,8 +118,8 @@ export function create(options) {
         resolve(data);
       };
 
-      let sendResult; 
-      
+      let sendResult;
+
       try {
         sendResult = timesync.send(to, {
           jsonrpc: '2.0',

@@ -1,4 +1,5 @@
-var Promise = require('./Promise');
+// not polyfilling for Promise
+// var Promise = require('./Promise');
 
 /**
  * Resolve a promise after a delay
