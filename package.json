@@ -33,11 +33,6 @@
     "watch": "1.0.2"
   },
   "scripts": {
-    "bundle": "mkdir -p dist; browserify src/timesync.js -t babelify -s timesync -o dist/timesync.js --bare",
-    "minify": "uglifyjs dist/timesync.js -o dist/timesync.min.js",
-    "compile": "babel -q src/ -d lib/",
-    "build": "npm run bundle; npm run minify; npm run compile",
-    "watch": "watch 'npm run build' src"
   },
   "browserify": {
     "transform": [
