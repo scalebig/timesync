@@ -3,7 +3,7 @@
   "version": "1.0.5",
   "description": "Time synchronization between peers",
   "author": "Jos de Jong <wjosdejong@gmail.com> (https://github.com/josdejong)",
-  "main": "./src/timesync.js",
+  "main": "./dist/timesync.js",
   "license": "MIT",
   "keywords": [
     "time",
@@ -33,6 +33,11 @@
     "watch": "1.0.2"
   },
   "scripts": {
+    "bundle": "mkdir -p dist; browserify src/timesync.js -t babelify -s timesync -o dist/timesync.js --bare",
+    "minify": "uglifyjs dist/timesync.js -o dist/timesync.min.js",
+    "compile": "babel -q src/ -d lib/",
+    "build": "npm run bundle; npm run minify; npm run compile",
+    "watch": "watch 'npm run build' src"
   },
   "browserify": {
     "transform": [
